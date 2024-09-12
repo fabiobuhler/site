@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    text-align: center; /* Centraliza o texto */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f4f4f4; /* Cor mais clara para o header */
+    border-bottom: 2px solid #ddd;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #56b45d; /* Cor de destaque ao passar o mouse */
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+   /* background-color: rgba(0, 0, 0, 0.5); Sombra leve sobre o fundo */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #56b45d;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+.btn:hover {
+    background-color: #4a9e52;
+}
+
+/* Estilos gerais para seções de conteúdo */
+section {
+    padding: 60px 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* Serviço e Parceria Grid */
+.service-grid, .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.service-item, .partner-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.service-item:hover, .partner-item:hover {
+    transform: translateY(-5px); /* Eleva o card levemente ao passar o mouse */
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-item p, .partner-item p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Estilos para imagens dentro dos grids */
+.service-item img, .partner-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o formulário */
+.form-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 2px solid #d1cec2;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+
+form button.btn {
+    background-color: #56b45d;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+form button.btn:hover {
+    background-color: #4a9e52;
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30%;
+    right: 20px;
+    z-index: 100;
+    text-align: center;
+}
+
+.whatsapp-float img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #000;
+}
+
+/* Background responsivo */
+@media (max-width: 768px) {
+    body {
+        background-image: url('imagens/background-mobile.jpg'); /* Imagem para dispositivos móveis */
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        background-image: url('imagens/background-desktop.jpg'); /* Imagem para desktops */
+    }
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.btn-small {
+    background-color: #56b45d;
+    color: white;
+    padding: 5px; /* Ajusta o padding para manter o tamanho proporcional */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 12px; /* Diminui o tamanho da fonte para caber no limite */
+    display: inline-block;
+    max-width: 60px; /* Limita o tamanho máximo a 60px */
+    text-align: center; /* Centraliza o texto no botão */
+    margin-top: 5px; /* Espaçamento entre o ícone e o botão */
+}
+
+.btn-small:hover {
+    background-color: #4a9e52;
+}
