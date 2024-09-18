@@ -1,6 +1,10 @@
 <?php
 // submit_form.php
 
+// Habilita exibição de erros (desative em produção)
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // Verifica se o formulário foi submetido via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitiza e valida os dados recebidos
@@ -38,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         // Redireciona para uma página de sucesso (crie a página conforme necessário)
         header("Location: obrigado.html");
+        exit;
     } else {
         echo "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.";
     }
