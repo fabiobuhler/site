@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lünler Planejados: Soluções sob medida para otimização de espaços com móveis planejados. Atendemos Porto Alegre e região.">
-    <meta name="keywords" content="móveis planejados, otimização de espaços, móveis sob medida, Porto Alegre, design de interiores, móveis personalizados">
+    <meta 
+        name="description" 
+        content="Lünler Planejados: Soluções sob medida para otimização de espaços com móveis planejados. Atendemos Porto Alegre e região."
+    >
+    <meta 
+        name="keywords" 
+        content="móveis planejados, otimização de espaços, móveis sob medida, Porto Alegre, design de interiores, móveis personalizados"
+    >
     <meta name="author" content="Lünler Planejados">
     <title>Lünler Planejados - Home</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -14,43 +20,71 @@
     <link rel="icon" href="imagens/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <a href="index.html"><img src="imagens/logo-lunler.png" alt="Lünler Planejados"></a>
+            <a href="index.html">
+                <img src="imagens/logo-lunler.png" alt="Lünler Planejados">
+            </a>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
-		<li><a href="projetos.html">Projetos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="parcerias.html">Parcerias</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Seção Hero -->
     <section class="hero">
-        <h2>Bem-vindo à Lünler Planejados</h2>
-    <p>
-        Na <strong>Lünler Planejados</strong>, transformamos cada espaço com móveis sob medida, criando ambientes que maximizam elegância e funcionalidade. Nossa expertise vai além do design exclusivo; oferecemos soluções inteligentes que refletem o seu estilo e são pensadas para atender às suas necessidades diárias.
-    </p>
-
-    <p>
-        A marca <strong>Lünler</strong> nasceu da união das tradições das famílias <strong>Lindner</strong> e <strong>Bühler</strong>, combinando décadas de experiência em marcenaria de alta qualidade e inovação no design de interiores. O nome, pronunciado <em>"línler"</em>, simboliza a perfeita fusão entre herança e modernidade, trazendo o melhor de ambos os mundos para os projetos de nossos clientes.
-    </p>
+        <div class="container">
+            <h1>Bem-vindo à Lünler Planejados</h1>
+            <p>
+                Na <strong>Lünler Planejados</strong>, transformamos cada espaço com móveis sob medida, criando ambientes que maximizam elegância e funcionalidade. Nossa expertise vai além do design exclusivo; oferecemos soluções inteligentes que refletem o seu estilo e são pensadas para atender às suas necessidades diárias.
+            </p>
+            <p>
+                A marca <strong>Lünler</strong> nasceu da união das tradições das famílias <strong>Lindner</strong> e <strong>Bühler</strong>, combinando décadas de experiência em marcenaria de alta qualidade e inovação no design de interiores. O nome, pronunciado <em>"línler"</em>, simboliza a perfeita fusão entre herança e modernidade, trazendo o melhor de ambos os mundos para os projetos de nossos clientes.
+            </p>
+            <a href="servicos.html" class="btn-primary">Conheça Nossos Serviços</a>
+        </div>
     </section>
 
+    <!-- Seção Sobre Nós -->
+    <section class="about">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>
+                Com anos de experiência no mercado de móveis planejados, a Lünler Planejados se destaca pela qualidade, inovação e atendimento personalizado. Cada projeto é desenvolvido de forma única, garantindo que os móveis se integrem perfeitamente ao seu espaço e atendam às suas expectativas.
+            </p>
+            <a href="projetos.html" class="btn-secondary">Veja Nossos Projetos</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Lünler Planejados. Todos os direitos reservados.</p>
+        <div class="social">
+            <a href="https://instagram.com/sua_conta" target="_blank" aria-label="Instagram">
+                <img src="imagens/instagram-icon.png" alt="Instagram" />
+            </a>
+            <a href="https://facebook.com/sua_conta" target="_blank" aria-label="Facebook">
+                <img src="imagens/facebook-icon.png" alt="Facebook" />
+            </a>
+        </div>
     </footer>
 
-    <!-- Botão flutuante do WhatsApp -->
+    <!-- Botão Flutuante do WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/5551999999999" target="_blank">
+        <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp">
             <img src="imagens/whatsapp-icon.png" alt="WhatsApp">
         </a>
         <a href="https://wa.me/5551999999999" target="_blank" class="btn-small">Fale conosco</a>
     </div>
 
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>

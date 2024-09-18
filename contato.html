@@ -2,67 +2,134 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta 
+        name="description" 
+        content="Entre em contato com a Lünler Planejados para soluções personalizadas em móveis planejados. Atendemos Porto Alegre e região."
+    >
+    <meta 
+        name="keywords" 
+        content="contato, móveis planejados, Porto Alegre, Lünler Planejados, móveis sob medida"
+    >
+    <meta name="author" content="Lünler Planejados">
     <title>Lünler Planejados - Contato</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="imagens/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <div class="logo">
-            <a href="index.html"><img src="imagens/logo-lunler.png" alt="Lünler Planejados"></a>
+            <a href="index.html">
+                <img src="imagens/logo-lunler.png" alt="Lünler Planejados">
+            </a>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
-		<li><a href="projetos.html">Projetos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="parcerias.html">Parcerias</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Seção de Contato -->
     <section id="contact">
-        <h2>Entre em Contato</h2>
-        <p>Fale conosco e descubra como podemos transformar seu espaço com móveis planejados sob medida.</p>
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>
+                Fale conosco e descubra como podemos transformar seu espaço com móveis planejados sob medida.
+            </p>
 
-        <div class="form-container">
             <!-- Formulário de Contato -->
-            <form action="submit_form.php" method="POST">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" required>
+            <div class="form-container">
+                <form action="submit_form.php" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Seu Nome Completo"
+                        >
+                    </div>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="seuemail@exemplo.com"
+                        >
+                    </div>
 
-                <label for="phone">Telefone</label>
-                <input type="text" id="phone" name="phone" required>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            required 
+                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" 
+                            placeholder="(51) 99999-9999"
+                        >
+                        <small>Formato: (XX) XXXXX-XXXX</small>
+                    </div>
 
-                <label for="message">Mensagem</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            required 
+                            placeholder="Como podemos ajudar você?"
+                        ></textarea>
+                    </div>
 
-                <button type="submit" class="btn">Enviar</button>
-            </form>
-        </div>
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+            </div>
 
-        <div class="contact-info">
-            <p>📍 Atendemos Porto Alegre, Região Metropolitana e Litoral Norte.</p>
-            <p>📞 Telefone: (51) 99999-9999</p>
+            <!-- Informações de Contato -->
+            <div class="contact-info">
+                <p>📍 Atendemos Porto Alegre, Região Metropolitana e Litoral Norte.</p>
+                <p>📞 Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
+                <p>✉️ Email: <a href="mailto:contato@lunlerplanejados.com.br">contato@lunlerplanejados.com.br</a></p>
+            </div>
         </div>
     </section>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Lünler Planejados. Todos os direitos reservados.</p>
+        <div class="social">
+            <a href="https://instagram.com/sua_conta" target="_blank" aria-label="Instagram">
+                <img src="imagens/instagram-icon.png" alt="Instagram" />
+            </a>
+            <a href="https://facebook.com/sua_conta" target="_blank" aria-label="Facebook">
+                <img src="imagens/facebook-icon.png" alt="Facebook" />
+            </a>
+        </div>
     </footer>
 
-    <!-- Botão flutuante do WhatsApp -->
+    <!-- Botão Flutuante do WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/5551999999999" target="_blank">
+        <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp">
             <img src="imagens/whatsapp-icon.png" alt="WhatsApp">
         </a>
         <a href="https://wa.me/5551999999999" target="_blank" class="btn-small">Fale conosco</a>
     </div>
 
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>

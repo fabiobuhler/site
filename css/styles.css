@@ -1,55 +1,113 @@
+/* =========================================================
+   Estilos Gerais
+========================================================= */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    text-align: center; /* Centraliza o texto */
     background-size: cover;
     background-position: center;
-    color: #CBC6B8;
+    background-repeat: no-repeat;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Imagens de Fundo Responsivas */
+@media (max-width: 768px) {
+    body {
+        background-image: url('imagens/background-mobile.jpg'); /* Imagem para dispositivos móveis */
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        background-image: url('imagens/background-desktop.jpg'); /* Imagem para desktops */
+    }
+}
+
+/* =========================================================
+   Cabeçalho
+========================================================= */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #f4f4f4; /* Cor mais clara para o header */
-    border-bottom: 2px solid #ddd;
+    background-color: rgba(244, 244, 244, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo img {
+header .logo img {
     max-width: 150px;
     height: auto;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
     list-style: none;
-    gap: 50px; /* Espaçamento entre os itens do menu */
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
-    color: #333;
     text-decoration: none;
+    color: #333;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #fff;
+    background-color: #56b45d;
+}
+
+/* =========================================================
+   Seções
+========================================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+section p {
+    text-align: center;
+    margin-bottom: 30px;
     font-size: 1.1em;
+    color: #555;
 }
 
-nav ul li a:hover {
-    color: #56b45d; /* Cor de destaque ao passar o mouse */
-}
-
+/* =========================================================
+   Hero
+========================================================= */
 .hero {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
     padding: 100px 20px;
     text-align: center;
-    color: rgba(0, 0, 0, 0.5);
-   /* background-color: rgba(0, 0, 0, 0.5); Sombra leve sobre o fundo */
 }
 
 .hero h1 {
@@ -58,88 +116,219 @@ nav ul li a:hover {
 }
 
 .hero p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 30px;
 }
 
-.btn {
+.btn-primary {
     background-color: #56b45d;
-    color: white;
+    color: #fff;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btn-primary:hover {
     background-color: #4a9e52;
 }
 
-/* Estilos gerais para seções de conteúdo */
-section {
+/* =========================================================
+   Sobre Nós
+========================================================= */
+.about {
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 60px 20px;
+    text-align: center;
 }
 
-h2 {
+.about h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #333;
 }
 
-p {
-    font-size: 1.2em;
-    color: #666;
+.about p {
+    font-size: 1.1em;
     margin-bottom: 30px;
-    line-height: 1.8;
+    color: #555;
 }
 
-/* Serviço e Parceria Grid */
-.service-grid, .partners-grid {
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+/* =========================================================
+   Serviços
+========================================================= */
+.services .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     margin-top: 40px;
 }
 
-.service-item, .partner-item {
-    background: #fff;
-    padding: 30px;
+.service-item {
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-item:hover, .partner-item:hover {
-    transform: translateY(-5px); /* Eleva o card levemente ao passar o mouse */
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-    font-size: 1.8em;
-    color: #333;
+.service-item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
-.service-item p, .partner-item p {
-    font-size: 1.1em;
-    color: #666;
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-/* Estilos para imagens dentro dos grids */
-.service-item img, .partner-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.service-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* =========================================================
+   Projetos
+========================================================= */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(86, 180, 93, 0.8);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.project-videos {
+    margin-top: 60px;
+}
+
+.project-videos h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-/* Estilos para o formulário */
+.video-container video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   Parcerias
+========================================================= */
+.partnerships .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.partner-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.partner-item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.partner-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.partner-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* =========================================================
+   Formulário de Contato
+========================================================= */
 .form-container {
-    max-width: 700px;
-    margin: 30px auto;
+    background-color: #fff;
     padding: 30px;
     border: 2px solid #d1cec2;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -148,38 +337,103 @@ form {
     gap: 20px;
 }
 
-form label {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #333;
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
+.form-group label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1em;
     width: 100%;
     box-sizing: border-box;
-    font-size: 1.1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #56b45d;
+    box-shadow: 0 0 5px rgba(86, 180, 93, 0.5);
+    outline: none;
 }
 
 form button.btn {
     background-color: #56b45d;
-    color: white;
+    color: #fff;
     padding: 15px;
     border: none;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button.btn:hover {
     background-color: #4a9e52;
 }
 
-/* Botão flutuante do WhatsApp */
+/* =========================================================
+   Informações de Contato
+========================================================= */
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.contact-info a {
+    color: #56b45d;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   Rodapé
+========================================================= */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+footer .social {
+    margin-top: 15px;
+}
+
+footer .social a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+footer .social a img {
+    width: 30px;
+    height: auto;
+}
+
+footer .social a:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   Botão Flutuante do WhatsApp
+========================================================= */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -195,49 +449,83 @@ form button.btn:hover {
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.whatsapp-float p {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #000;
+.whatsapp-float img:hover {
+    transform: scale(1.1);
 }
 
-/* Background responsivo */
-@media (max-width: 768px) {
-    body {
-        background-image: url('imagens/background-mobile.jpg'); /* Imagem para dispositivos móveis */
-    }
-}
-
-@media (min-width: 769px) {
-    body {
-        background-image: url('imagens/background-desktop.jpg'); /* Imagem para desktops */
-    }
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.btn-small {
+.whatsapp-float a.btn-small {
+    display: block;
     background-color: #56b45d;
-    color: white;
-    padding: 5px; /* Ajusta o padding para manter o tamanho proporcional */
-    text-decoration: none;
+    color: #fff;
+    padding: 10px;
     border-radius: 8px;
-    font-size: 12px; /* Diminui o tamanho da fonte para caber no limite */
-    display: inline-block;
-    max-width: 60px; /* Limita o tamanho máximo a 60px */
-    text-align: center; /* Centraliza o texto no botão */
-    margin-top: 5px; /* Espaçamento entre o ícone e o botão */
+    font-size: 12px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.btn-small:hover {
+.whatsapp-float a.btn-small:hover {
     background-color: #4a9e52;
+}
+
+/* =========================================================
+   Responsividade Adicional
+========================================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .whatsapp-float {
+        bottom: 20%;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-float a.btn-small {
+        padding: 8px;
+        font-size: 10px;
+        width: 50px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .service-item img,
+    .partner-item img,
+    .gallery-item img {
+        height: 150px;
+    }
+
+    .project-videos video {
+        width: 100%;
+        height: auto;
+    }
 }
