@@ -41,15 +41,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Padding reduzido */
+    padding: 10px 20px;
     background-color: rgba(244, 244, 244, 0.9);
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative; /* Necessário para posicionar o menu relativo ao header */
 }
 
 header .logo img {
-    max-width: 120px; /* Logo reduzido */
+    max-width: 120px;
     height: auto;
 }
 
@@ -58,7 +59,7 @@ header .logo img {
     display: none;
     background: none;
     border: none;
-    font-size: 1.5em; /* Tamanho da fonte reduzido */
+    font-size: 1.5em;
     cursor: pointer;
     color: #333;
 }
@@ -69,7 +70,7 @@ header .logo img {
 }
 
 nav ul {
-    list-style: none; /* Remove as bolinhas */
+    list-style: none;
     display: flex;
     gap: 20px;
 }
@@ -95,9 +96,9 @@ nav ul li a.active {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o contêiner */
+    margin: 0 auto;
     padding: 40px 0;
-    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+    text-align: center;
 }
 
 section {
@@ -120,9 +121,9 @@ section p {
    Hero (Seção Bem-vindo)
 ========================================================= */
 .hero {
-    background: rgba(0, 0, 0, 0.3); /* Fundo menos escuro */
+    background: rgba(0, 0, 0, 0.3);
     color: #fff;
-    padding: 80px 20px; /* Padding ajustado */
+    padding: 80px 20px;
     text-align: center;
 }
 
@@ -356,7 +357,7 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    text-align: left; /* Alinha os labels e inputs à esquerda */
+    text-align: left;
 }
 
 .form-group label {
@@ -521,7 +522,7 @@ footer .social a:hover img {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        position: relative; /* Necessário para posicionar o menu relativo ao header */
+        position: relative;
     }
 
     .menu-toggle {
@@ -540,15 +541,16 @@ footer .social a:hover img {
         position: absolute;
         top: 100%; /* Posiciona o menu imediatamente abaixo do header */
         left: 0;
-        background-color: rgba(244, 244, 244, 0.95);
-        width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: transparent; /* Torna o fundo transparente */
+        border: 1px solid #ccc; /* Adiciona uma borda para a moldura */
+        width: auto; /* Ajusta a largura para o conteúdo */
+        box-shadow: none; /* Remove a sombra */
         z-index: 1000;
     }
 
     .nav-menu ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Alinha os itens à esquerda */
     }
 
     .nav-menu ul li {
@@ -557,15 +559,19 @@ footer .social a:hover img {
 
     .nav-menu ul li a {
         width: 100%;
-        text-align: center;
-        padding: 15px 0;
+        text-align: left; /* Alinha o texto à esquerda */
+        padding: 15px 20px; /* Adiciona padding à esquerda */
         border-bottom: 1px solid #ddd;
-        margin-bottom: 10px; /* Aumenta o espaçamento entre os links */
+        margin-bottom: 0;
     }
 
     .nav-menu ul li a:last-child {
         border-bottom: none;
-        margin-bottom: 0; /* Remove o espaçamento extra no último link */
+    }
+
+    /* Ajuste opcional para alinhar o menu com o botão */
+    .nav-menu.active {
+        left: 10px; /* Alinha o menu com o botão de menu */
     }
 
     .whatsapp-float {
