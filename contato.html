@@ -8,11 +8,11 @@
     >
     <meta 
         name="description" 
-        content="Entre em contato com a Lünler Planejados para soluções personalizadas em móveis planejados. Atendemos Porto Alegre e região."
+        content="Entre em contato com a Lünler Planejados."
     >
     <meta 
         name="keywords" 
-        content="contato, móveis planejados, Porto Alegre, Lünler Planejados, móveis sob medida"
+        content="contato, Lünler Planejados, orçamento, Porto Alegre"
     >
     <meta name="author" content="Lünler Planejados">
     <title>Lünler Planejados - Contato</title>
@@ -22,15 +22,16 @@
 <body>
     <!-- Cabeçalho -->
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="imagens/logo-lunler.png" alt="Lünler Planejados">
-            </a>
-        </div>
-        <!-- Botão de Toggle do Menu -->
-        <button class="menu-toggle" aria-label="Abrir Menu">
-            &#9776;
-        </button>
+    <div class="logo">
+        <a href="index.html">
+            <img src="imagens/logo-desktop.png" alt="Lünler Planejados" class="logo-desktop">
+            <img src="imagens/logo-mobile.png" alt="Lünler Planejados" class="logo-mobile">
+        </a>
+    </div>
+    <!-- Botão de Toggle do Menu -->
+    <button class="menu-toggle" aria-label="Abrir Menu">
+        &#9776;
+    </button>
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -42,72 +43,27 @@
         </nav>
     </header>
 
-    <!-- Seção de Contato -->
-    <section id="contact">
+    <!-- Conteúdo Principal -->
+    <section class="contact">
         <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>
-                Fale conosco e descubra como podemos transformar seu espaço com móveis planejados sob medida.
-            </p>
-
-            <!-- Formulário de Contato -->
+            <h2>Fale Conosco</h2>
+            <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
             <div class="form-container">
-                <form action="submit_form.php" method="POST" novalidate>
+                <form action="enviar_mensagem.php" method="post">
                     <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            required 
-                            placeholder="Seu Nome Completo"
-                        >
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required 
-                            placeholder="seuemail@exemplo.com"
-                        >
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            name="phone" 
-                            required 
-                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" 
-                            placeholder="(51) 99999-9999"
-                        >
-                        <small>Formato: (XX) XXXXX-XXXX</small>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="5" 
-                            required 
-                            placeholder="Como podemos ajudar você?"
-                        ></textarea>
-                    </div>
-
-                    <button type="submit" class="btn">Enviar</button>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
                 </form>
-            </div>
-
-            <!-- Informações de Contato -->
-            <div class="contact-info">
-                <p>📍 Atendemos Porto Alegre, Região Metropolitana e Litoral Norte.</p>
-                <p>📞 Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
-                <p>✉️ Email: <a href="mailto:contato@lunlerplanejados.com.br">contato@lunlerplanejados.com.br</a></p>
             </div>
         </div>
     </section>
@@ -134,6 +90,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

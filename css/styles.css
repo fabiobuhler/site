@@ -12,26 +12,77 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: #333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Imagens de Fundo Responsivas */
-@media (max-width: 768px) {
-    body {
-        background-image: url('../imagens/background-mobile.jpg');
-    }
+/* Contêiner Geral */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
 }
 
-@media (min-width: 769px) {
-    body {
-        background-image: url('../imagens/background-desktop.jpg');
-    }
+/* Imagens Responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+/* Botões */
+.btn-primary,
+.btn-secondary,
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #56b45d;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #4a9e52;
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+
+.btn {
+    background-color: #56b45d;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #4a9e52;
 }
 
 /* =========================================================
@@ -46,36 +97,38 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    position: relative; /* Necessário para posicionar o menu relativo ao header */
+}
+
+header .logo {
+    max-width: 150px;
 }
 
 header .logo img {
-    max-width: 120px;
+    width: 100%;
     height: auto;
 }
 
-/* Botão de Toggle do Menu */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.8em;
     cursor: pointer;
     color: #333;
 }
 
-/* Menu de Navegação */
 .nav-menu {
     display: flex;
+    align-items: center;
 }
 
-nav ul {
+.nav-menu ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav ul li a {
+.nav-menu ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -84,47 +137,28 @@ nav ul li a {
     border-radius: 5px;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: /*#fff*/#333;
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+    color: #333;
     background-color: #56b45d;
 }
 
 /* =========================================================
-   Contêiner e Alinhamento
-========================================================= */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
-}
-
-section {
-    margin-bottom: 60px;
-}
-
-section h2 {
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    color: #333;
-}
-
-section p {
-    margin-bottom: 30px;
-    font-size: 1.1em;
-    color: #555;
-}
-
-/* =========================================================
-   Hero (Seção Bem-vindo)
+   Seção Hero
 ========================================================= */
 .hero {
-    background: rgba(0, 0, 0, 0.3);
+    background-image: url('imagens/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
+}
+
+.hero .container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 60px;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -137,33 +171,18 @@ section p {
     margin-bottom: 30px;
 }
 
-/* Botão Primário */
-.btn-primary {
-    background-color: #56b45d;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #4a9e52;
-}
-
 /* =========================================================
-   Sobre Nós
+   Seção Sobre Nós
 ========================================================= */
 .about {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 60px 20px;
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
 }
 
 .about h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .about p {
@@ -172,33 +191,34 @@ section p {
     color: #555;
 }
 
-.btn-secondary {
-    background-color: #333;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #555;
-}
-
 /* =========================================================
-   Serviços
+   Seção Serviços
 ========================================================= */
-.services .service-grid {
+.services {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.services p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 .service-item {
-    background-color: #f9f9f9;
-    padding: 20px;
+    background-color: #fff;
+    padding: 25px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -206,12 +226,12 @@ section p {
 
 .service-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-item img {
-    max-width: 100%;
-    height: 180px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -229,13 +249,28 @@ section p {
 }
 
 /* =========================================================
-   Projetos
+   Seção Projetos
 ========================================================= */
+.projects {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.projects p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .gallery-item {
@@ -262,7 +297,7 @@ section p {
     color: #fff;
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -271,43 +306,56 @@ section p {
     opacity: 1;
 }
 
+/* Seção de Vídeos */
 .project-videos {
     margin-top: 60px;
+    text-align: center;
 }
 
 .project-videos h3 {
-    text-align: center;
-    margin-bottom: 20px;
     font-size: 2em;
-    color: #333;
+    margin-bottom: 20px;
 }
 
 .video-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .video-container video {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 800px;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================================
-   Parcerias
+   Seção Parcerias
 ========================================================= */
-.partnerships .partners-grid {
+.partnerships {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.partnerships h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.partnerships p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.partners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 .partner-item {
-    background-color: #f9f9f9;
-    padding: 20px;
+    background-color: #fff;
+    padding: 25px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -315,12 +363,12 @@ section p {
 
 .partner-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .partner-item img {
-    max-width: 100%;
-    height: 180px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -338,14 +386,31 @@ section p {
 }
 
 /* =========================================================
-   Formulário de Contato
+   Seção Contato
 ========================================================= */
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
 .form-container {
     background-color: #fff;
-    padding: 30px;
+    padding: 40px;
     border: 2px solid #d1cec2;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 form {
@@ -401,57 +466,13 @@ form button.btn:hover {
 }
 
 /* =========================================================
-   Informações de Contato
-========================================================= */
-.contact-info {
-    margin-top: 30px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    color: #56b45d;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* =========================================================
-   Seção de Agradecimento
-========================================================= */
-.thank-you {
-    padding: 80px 20px;
-}
-
-.thank-you h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.thank-you p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.thank-you .btn-primary {
-    margin-top: 20px;
-}
-
-/* =========================================================
    Rodapé
 ========================================================= */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    position: relative;
+    padding: 25px 0;
 }
 
 footer .social {
@@ -515,43 +536,67 @@ footer .social a:hover img {
 }
 
 /* =========================================================
-   Responsividade Adicional
+   Responsividade
 ========================================================= */
+@media (max-width: 1024px) {
+    header .logo {
+        max-width: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .about h2,
+    .services h2,
+    .projects h2,
+    .partnerships h2,
+    .contact h2 {
+        font-size: 2.2em;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
+        flex-wrap: wrap;
     }
 
     .menu-toggle {
         display: block;
     }
 
-    /* Oculta o menu de navegação por padrão */
     .nav-menu {
         display: none;
         width: 100%;
     }
 
-    /* Estilos do menu quando aberto */
     .nav-menu.active {
         display: block;
         position: absolute;
-        top: 100%; /* Posiciona o menu imediatamente abaixo do header */
-        right: 10px; /* Alinha o menu com o botão de menu */
-        background-color: #fff; /* Fundo branco */
-        border: 1px solid #ccc; /* Moldura */
-        border-radius: 8px; /* Bordas arredondadas */
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
         width: auto;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 1000;
     }
 
     .nav-menu ul {
         flex-direction: column;
-        align-items: flex-end; /* Alinha os itens à direita */
+        align-items: flex-end;
     }
 
     .nav-menu ul li {
@@ -560,35 +605,40 @@ footer .social a:hover img {
 
     .nav-menu ul li a {
         width: 100%;
-        text-align: right; /* Alinha o texto à direita */
-        padding: 15px 20px; /* Padding ajustado */
+        text-align: right;
+        padding: 15px 20px;
         border-bottom: 1px solid #ddd;
-        margin-bottom: 0;
-        color: #333; /* Cor do texto */
+        color: #333;
     }
 
     .nav-menu ul li a:hover,
     .nav-menu ul li a.active {
-        background-color: #f0f0f0; /* Cor de fundo ao hover */
+        background-color: #f0f0f0;
     }
 
     .nav-menu ul li a:last-child {
         border-bottom: none;
     }
 
-    .whatsapp-float {
-        bottom: 20%;
-        right: 10px;
-        width: 50px;
-        height: 50px;
+    /* Ajustes no tamanho do logo para mobile */
+    header .logo {
+        max-width: 100px;
     }
 
-    .whatsapp-float a.btn-small {
-        padding: 8px;
-        font-size: 10px;
-        width: 50px;
+    /* Troca de logo entre desktop e mobile */
+    header .logo img {
+        display: none;
     }
 
+    header .logo img.logo-desktop {
+        display: none;
+    }
+
+    header .logo img.logo-mobile {
+        display: block;
+    }
+
+    /* Ajustes para a seção Hero */
     .hero {
         padding: 60px 20px;
     }
@@ -601,24 +651,85 @@ footer .social a:hover img {
         font-size: 1em;
     }
 
+    /* Ajustes nos títulos */
+    .about h2,
+    .services h2,
+    .projects h2,
+    .partnerships h2,
+    .contact h2 {
+        font-size: 2em;
+    }
+
+    /* Ajustes no texto */
+    .about p,
+    .services p,
+    .projects p,
+    .partnerships p,
+    .contact p {
+        font-size: 1em;
+    }
+
+    /* Ajustes nos botões */
+    .btn-primary,
+    .btn-secondary,
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* Ajustes nas grids */
+    .service-grid,
+    .partners-grid,
+    .project-gallery {
+        gap: 20px;
+    }
+
+    /* Ajustes nos itens das grids */
     .service-item img,
     .partner-item img,
     .gallery-item img {
-        height: 150px;
-    }
-
-    .project-videos video {
-        width: 100%;
         height: auto;
     }
 
-    .projects .project-gallery,
-    .projects .project-videos {
-        margin-top: 20px;
+    /* Ajustes no vídeo */
+    .video-container video {
+        max-width: 100%;
     }
 
-    .services .service-grid,
-    .partnerships .partners-grid {
-        gap: 20px;
+    /* Ajustes no botão flutuante do WhatsApp */
+    .whatsapp-float {
+        bottom: 20%;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-float a.btn-small {
+        padding: 8px;
+        font-size: 10px;
+        width: 50px;
+    }
+}
+
+/* =========================================================
+   Troca de Logos entre Desktop e Mobile
+========================================================= */
+/* Desktop */
+@media (min-width: 769px) {
+    header .logo img.logo-desktop {
+        display: block;
+    }
+    header .logo img.logo-mobile {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header .logo img.logo-desktop {
+        display: none;
+    }
+    header .logo img.logo-mobile {
+        display: block;
     }
 }
