@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* =========================================================
    Estilos Gerais
 ========================================================= */
@@ -22,13 +24,13 @@ body {
 /* Imagens de Fundo Responsivas */
 @media (max-width: 768px) {
     body {
-        background-image: url('imagens/background-mobile.jpg'); /* Imagem para dispositivos móveis */
+        background-image: url('../imagens/background-mobile.jpg');
     }
 }
 
 @media (min-width: 769px) {
     body {
-        background-image: url('imagens/background-desktop.jpg'); /* Imagem para desktops */
+        background-image: url('../imagens/background-desktop.jpg');
     }
 }
 
@@ -39,7 +41,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px; /* Padding reduzido */
     background-color: rgba(244, 244, 244, 0.9);
     position: sticky;
     top: 0;
@@ -47,12 +49,27 @@ header {
 }
 
 header .logo img {
-    max-width: 150px;
+    max-width: 120px; /* Logo reduzido */
     height: auto;
 }
 
+/* Botão de Toggle do Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em; /* Tamanho da fonte reduzido */
+    cursor: pointer;
+    color: #333;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+}
+
 nav ul {
-    list-style: none;
+    list-style: none; /* Remove as bolinhas */
     display: flex;
     gap: 20px;
 }
@@ -61,7 +78,7 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 10px 15px;
     transition: color 0.3s ease, background-color 0.3s ease;
     border-radius: 5px;
 }
@@ -72,14 +89,62 @@ nav ul li a.active {
     background-color: #56b45d;
 }
 
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Exibe o botão de toggle */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Oculta o menu de navegação por padrão */
+    .nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    /* Estilos do menu quando aberto */
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top: 50px; /* Ajuste conforme a altura do header */
+        left: 0;
+        background-color: rgba(244, 244, 244, 0.95);
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-menu ul li a:last-child {
+        border-bottom: none;
+    }
+}
+
 /* =========================================================
-   Seções
+   Contêiner e Alinhamento
 ========================================================= */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centraliza o contêiner */
     padding: 40px 0;
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
 }
 
 section {
@@ -87,26 +152,24 @@ section {
 }
 
 section h2 {
-    text-align: center;
     margin-bottom: 20px;
     font-size: 2.5em;
     color: #333;
 }
 
 section p {
-    text-align: center;
     margin-bottom: 30px;
     font-size: 1.1em;
     color: #555;
 }
 
 /* =========================================================
-   Hero
+   Hero (Seção Bem-vindo)
 ========================================================= */
 .hero {
-    background: white /*rgba(0, 0, 0, 0.6)*/;
-    color: #333;
-    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.3); /* Fundo menos escuro */
+    color: #fff;
+    padding: 80px 20px; /* Padding ajustado */
     text-align: center;
 }
 
@@ -120,6 +183,7 @@ section p {
     margin-bottom: 30px;
 }
 
+/* Botão Primário */
 .btn-primary {
     background-color: #56b45d;
     color: #fff;
@@ -140,7 +204,6 @@ section p {
 .about {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 60px 20px;
-    text-align: center;
 }
 
 .about h2 {
@@ -340,6 +403,7 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
+    text-align: left; /* Alinha os labels e inputs à esquerda */
 }
 
 .form-group label {
@@ -386,10 +450,13 @@ form button.btn:hover {
    Informações de Contato
 ========================================================= */
 .contact-info {
-    text-align: center;
     margin-top: 30px;
     font-size: 1.1em;
     color: #333;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
 }
 
 .contact-info a {
@@ -399,6 +466,27 @@ form button.btn:hover {
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+/* =========================================================
+   Seção de Agradecimento
+========================================================= */
+.thank-you {
+    padding: 80px 20px;
+}
+
+.thank-you h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.thank-you p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.thank-you .btn-primary {
+    margin-top: 20px;
 }
 
 /* =========================================================
@@ -477,20 +565,10 @@ footer .social a:hover img {
 ========================================================= */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        width: 100%;
-        text-align: left;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
     .whatsapp-float {
@@ -527,5 +605,15 @@ footer .social a:hover img {
     .project-videos video {
         width: 100%;
         height: auto;
+    }
+
+    .projects .project-gallery,
+    .projects .project-videos {
+        margin-top: 20px;
+    }
+
+    .services .service-grid,
+    .partnerships .partners-grid {
+        gap: 20px;
     }
 }

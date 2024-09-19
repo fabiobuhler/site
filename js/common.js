@@ -1,7 +1,31 @@
 // script.js
 
-// Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', () => {
+    // Toggle do Menu Responsivo
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+
+            // Alterna o atributo aria-label para acessibilidade
+            const isActive = navMenu.classList.contains('active');
+            menuToggle.setAttribute('aria-label', isActive ? 'Fechar Menu' : 'Abrir Menu');
+        });
+    }
+
+    // Fechar o menu ao clicar em um link (opcional)
+    const navLinks = document.querySelectorAll('.nav-menu ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-label', 'Abrir Menu');
+            }
+        });
+    });
+
     // Smooth Scroll para links internos
     const internalLinks = document.querySelectorAll('a[href^="#"]');
 
