@@ -54,7 +54,6 @@ header .logo img {
     height: auto;
 }
 
-/* Botão de Toggle do Menu */
 .menu-toggle {
     display: none;
     background: none;
@@ -540,7 +539,7 @@ footer .social a:hover img {
         display: block;
         position: absolute;
         top: 100%; /* Posiciona o menu imediatamente abaixo do header */
-        left: 0;
+        right: 0; /* Alinha o menu à direita */
         background-color: transparent; /* Torna o fundo transparente */
         border: 1px solid #ccc; /* Adiciona uma borda para a moldura */
         width: auto; /* Ajusta a largura para o conteúdo */
@@ -550,7 +549,7 @@ footer .social a:hover img {
 
     .nav-menu ul {
         flex-direction: column;
-        align-items: flex-start; /* Alinha os itens à esquerda */
+        align-items: flex-end; /* Alinha os itens à direita */
     }
 
     .nav-menu ul li {
@@ -559,8 +558,8 @@ footer .social a:hover img {
 
     .nav-menu ul li a {
         width: 100%;
-        text-align: left; /* Alinha o texto à esquerda */
-        padding: 15px 20px; /* Adiciona padding à esquerda */
+        text-align: right; /* Alinha o texto à direita */
+        padding: 15px 20px; /* Adiciona padding à direita */
         border-bottom: 1px solid #ddd;
         margin-bottom: 0;
     }
@@ -571,7 +570,7 @@ footer .social a:hover img {
 
     /* Ajuste opcional para alinhar o menu com o botão */
     .nav-menu.active {
-        left: 10px; /* Alinha o menu com o botão de menu */
+        right: 10px; /* Alinha o menu com o botão de menu */
     }
 
     .whatsapp-float {
