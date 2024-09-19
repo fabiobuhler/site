@@ -521,7 +521,7 @@ footer .social a:hover img {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        position: relative;
+        position: relative; /* Necessário para posicionar o menu relativo ao header */
     }
 
     .menu-toggle {
@@ -538,7 +538,7 @@ footer .social a:hover img {
     .nav-menu.active {
         display: block;
         position: absolute;
-        top: 50px; /* Ajuste conforme a altura do header */
+        top: 100%; /* Posiciona o menu imediatamente abaixo do header */
         left: 0;
         background-color: rgba(244, 244, 244, 0.95);
         width: 100%;
