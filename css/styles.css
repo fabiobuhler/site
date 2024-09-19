@@ -54,6 +54,7 @@ header .logo img {
     height: auto;
 }
 
+/* Botão de Toggle do Menu */
 .menu-toggle {
     display: none;
     background: none;
@@ -539,11 +540,12 @@ footer .social a:hover img {
         display: block;
         position: absolute;
         top: 100%; /* Posiciona o menu imediatamente abaixo do header */
-        right: 0; /* Alinha o menu à direita */
-        background-color: transparent; /* Torna o fundo transparente */
-        border: 1px solid #ccc; /* Adiciona uma borda para a moldura */
-        width: auto; /* Ajusta a largura para o conteúdo */
-        box-shadow: none; /* Remove a sombra */
+        right: 10px; /* Alinha o menu com o botão de menu */
+        background-color: #fff; /* Fundo branco */
+        border: 1px solid #ccc; /* Moldura */
+        border-radius: 8px; /* Bordas arredondadas */
+        width: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
         z-index: 1000;
     }
 
@@ -559,18 +561,19 @@ footer .social a:hover img {
     .nav-menu ul li a {
         width: 100%;
         text-align: right; /* Alinha o texto à direita */
-        padding: 15px 20px; /* Adiciona padding à direita */
+        padding: 15px 20px; /* Padding ajustado */
         border-bottom: 1px solid #ddd;
         margin-bottom: 0;
+        color: #333; /* Cor do texto */
+    }
+
+    .nav-menu ul li a:hover,
+    .nav-menu ul li a.active {
+        background-color: #f0f0f0; /* Cor de fundo ao hover */
     }
 
     .nav-menu ul li a:last-child {
         border-bottom: none;
-    }
-
-    /* Ajuste opcional para alinhar o menu com o botão */
-    .nav-menu.active {
-        right: 10px; /* Alinha o menu com o botão de menu */
     }
 
     .whatsapp-float {
